@@ -1,0 +1,34 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<cmath>
+using namespace std;
+int main() {
+    int t,n;
+    cout<<"Enter testcases: ";
+    cin>>t;
+    
+    for(int i=0;i<t;i++){
+        int mx=-1,num=0;
+        cout<<"Enter n: ";
+        cin>>n;
+        int arr[n+1];
+        arr[n]=-1;
+        cout<<"Enter visitors: ";
+        for(int j=0;j<n;j++){
+            cin>>arr[i];
+        }
+        for(int j=0;j<n;j++){
+            if(arr[j]>mx && arr[j+1]<arr[j]){
+                num++;
+                cout<<mx<<" "<<num<<endl;
+            }
+            mx=max(mx,arr[j]);
+            
+        }
+        
+        cout<<"#"<<i+1<<": "<<num<<endl;
+        
+    }
+
+    return 0;
+}
